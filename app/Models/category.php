@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class category extends Model
 {
     public $timestamps = false;
+    protected $fillable = ['name', 'info'];
 }
