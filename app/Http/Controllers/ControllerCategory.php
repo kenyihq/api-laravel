@@ -33,4 +33,14 @@ class ControllerCategory extends Controller
         $category->update($request->all());
         return response($category, 200);
     }
+
+    public function deleteCategory(Request $request, $id){
+        $category = category::find($id);
+        if(!$category){
+            return response()->json(['error' => 'Category not found'], 404);
+        }
+
+        $category->delete();
+        return response()->json(null, 204);
+    }
 }

@@ -19,6 +19,8 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+// Category API
+
 Route::get('category', [ControllerCategory::class, 'getCategory']);
 
 Route::get('category/{id}', [ControllerCategory::class, 'getCategoryId']);
@@ -26,3 +28,5 @@ Route::get('category/{id}', [ControllerCategory::class, 'getCategoryId']);
 Route::post('category', [ControllerCategory::class, 'addCategory']);
 
 Route::put('category/{id}', [ControllerCategory::class, 'updateCategory']);
+
+Route::delete('category/{id}', [ControllerCategory::class, 'deleteCategory']);
